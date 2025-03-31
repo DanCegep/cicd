@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    circleci.com/project-id: 545168a5-c1d1-4b79-ba0a-cce9766ab8d7
+  labels:
+    circleci.com/component-name: example-deployment
+    circleci.com/version: 1.0.0
+  name: example-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+        circleci.com/component-name: example-deployment
+        circleci.com/version: 1.0.0
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 8080
