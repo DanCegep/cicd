@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: nginx
+    steps:
+      - checkout
+      - run:
+          name: Show PATH
+          command: echo $PATH
+      - run:
+          name: Test Nginx Configuration
+          command: nginx -t
+      - run:
+          name: Show Nginx Version
+          command: nginx -v
