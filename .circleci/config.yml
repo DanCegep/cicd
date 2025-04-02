@@ -1,17 +1,36 @@
-version: 2
+version: 2.1
 jobs:
   build:
-    working_directory: ~/repo
     docker:
-      - image: nginx
+      - image: circleci/node:14
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 20.10.7
       - run:
-          name: Show PATH
-          command: echo $PATH
+          name: Build Docker Image
+          command: |
+            docker build -t your-dockerhub-username/my-k8s-app:$CIRCLE_SHA1 .
       - run:
-          name: Test Nginx Configuration
-          command: nginx -t
+          name: Push Docker Image
+          command: |
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+            docker push your-dockerhub-username/my-k8s-app:$CIRCLE_SHA1
+
+  deploy:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.7
       - run:
-          name: Show Nginx Version
-          command: nginx -v
+          name: Install kubectl
+          command: |
+            curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+            chmod +x ./kubectl
+            mv ./kubectl /usr/local/bin/kubectl
+      - run:
+          name: Deploy to Kubernetes
+          command: |
+            kubectl set image deployment/my-k8s-deployment my-container=your-dockerhub-username/my-k8s-app:$CIRCLE_SHA1

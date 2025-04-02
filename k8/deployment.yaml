@@ -1,26 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    circleci.com/project-id: 545168a5-c1d1-4b79-ba0a-cce9766ab8d7
-  labels:
-    circleci.com/component-name: example-deployment
-    circleci.com/version: 1.0.0
-  name: example-deployment
-  namespace: default
+  name: my-k8s-deployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: test
+      app: my-k8s-app
   template:
     metadata:
       labels:
-        app: test
-        circleci.com/component-name: example-deployment
-        circleci.com/version: 1.0.0
+        app: my-k8s-app
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: my-container
+        image: your-dockerhub-username/my-k8s-app:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
