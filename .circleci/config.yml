@@ -2,26 +2,24 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:14
+      - image: node:14
     steps:
       - checkout
       - run:
           name: Build Docker Image
           command: |
-            docker build -t dancegep/my-k8s-app:$CIRCLE_SHA1 .
+            docker build -t dancegep/my-k8s-app:latest .
       - run:
           name: Push Docker Image
           command: |
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-            docker push dancegep/my-k8s-app:$CIRCLE_SHA1
+            docker push dancegep/my-k8s-app:latest
 
   deploy:
     docker:
-      - image: circleci/python:3.8
+      - image: python:3.8
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.7
       - run:
           name: Install kubectl
           command: |
@@ -31,4 +29,4 @@ jobs:
       - run:
           name: Deploy to Kubernetes
           command: |
-            kubectl set image deployment/my-k8s-deployment my-container=dancegep/my-k8s-app:$CIRCLE_SHA1
+            kubectl set image deployment/my-k8s-deployment my-container=dancegep/my-k8s-app:latest
