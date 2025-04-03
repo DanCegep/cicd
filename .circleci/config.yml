@@ -7,11 +7,11 @@ jobs:
       - image: node:14
     steps:
       - checkout
-     # - run:
-         # name: Install docker
-         # command: |
-         #   sudo apt update
-         #   sudo apt install docker.io
+      - run:
+          name: Install docker
+          command: |
+            sudo apt update
+            sudo apt install docker.io
       - run:
           name: Build Docker Image
           command: |
