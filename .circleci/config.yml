@@ -7,11 +7,6 @@ jobs:
       - image: node:14
     steps:
       - checkout
-     # - run:
-         # name: Install docker
-         # command: |
-         #   sudo apt update
-         #   sudo apt install docker.io
       - setup_remote_docker
       - run:
           name: Install Docker
