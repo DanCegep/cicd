@@ -1,14 +1,15 @@
 # Projet CI/CD
 
 Projet pour réaliser un CI/CD simple à l'aide d'outils gratuit.
-Basé sur https://k21academy.com/devops-job-bootcamp/end-to-end-ci-cd-pipeline-setup-for-kubernetes-with-circleci-a-beginners-guide/
 
 Vous devez vous créez un compte sur :
 -  Github
 -  Docker-hub
 -  CircleCI
 
-Ces trois composantes permettront le déploiement en continu d'une application sur votre cluster local Kubernetes.
+Basez-vous sur https://k21academy.com/devops-job-bootcamp/end-to-end-ci-cd-pipeline-setup-for-kubernetes-with-circleci-a-beginners-guide/#4
+
+Commencer au  Step 2: Create a Simple Application. Créer le répertoire dans /home/etudiant/Documents/project.
 
 # 1. Configurer CircleCI
 
