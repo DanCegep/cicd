@@ -6,7 +6,7 @@ metadata:
   annotations:
       circleci.com/project-id: 3f9f8a01-7b1f-41fc-82e1-fd9e749a983e
   labels:
-      circleci.com/component-name: example-deployment
+      circleci.com/component-name: my-k8s-app
       circleci.com/version: 1.0.0
       app: my-k8s-app
 spec:
@@ -17,7 +17,7 @@ spec:
     metadata:
       labels:
         app: my-k8s-app
-        circleci.com/component-name: example-deployment
+        circleci.com/component-name: my-k8s-app
         circleci.com/version: 1.0.0
     spec:
       containers:
