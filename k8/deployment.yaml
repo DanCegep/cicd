@@ -2,8 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-k8s-deployment
+  namespace: dev
+  annotations:
+      circleci.com/project-id: 3f9f8a01-7b1f-41fc-82e1-fd9e749a983e
+  labels:
+      circleci.com/component-name: example-deployment
+      circleci.com/version: 1.0.0
+      app: my-k8s-app
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: my-k8s-app
@@ -11,9 +17,17 @@ spec:
     metadata:
       labels:
         app: my-k8s-app
+        circleci.com/component-name: example-deployment
+        circleci.com/version: 1.0.0
     spec:
       containers:
-      - name: my-container
-        image: dancegep/my-k8s-app:latest
+      - name: nodejs-container
+        image: node:14 # Utilise l'image officielle Node.js
         ports:
         - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "dev"
+        - name: APP_PORT
+          value: "3000"
+     
