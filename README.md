@@ -57,7 +57,7 @@ Sa flexibilité et sa capacité à s’intégrer facilement avec d’autres outi
 Cette étape met en place le workflow CI/CD.
 
 
-[Consultez le guide sur docker hub](3.circleci.md)
+[Consultez le guide sur docker hub](3.circleCi.md)
 
 
 
