@@ -14,7 +14,24 @@ Vous devez vous créer (avec votre courriel du cégep) un compte sur :
 -  CircleCI
 
 
-# 
+# Architecture
+
+Vous avez un cluster Kubernetes avec 4 Namespace Dev, QA, Prépod et Prod. Vous devez créer un CICD en utilisant trois produits cloud gratuits.
+
+
+GitHub : Plateforme de gestion de code collaboratif où le code est versionné et stocké. Il déclenche les pipelines CI/CD via des commits ou des pull requests. Il assure une collaboration fluide et une gestion centralisée du code.
+
+
+Docker Hub: Registre pour héberger, partager et déployer des images Débardeur. Il garantit des déploiements standardisés et rapides dans divers environnements. Les équipes peuvent stocker et accéder facilement à leurs conteneurs.
+
+
+CircleCI : Outil CI/CD qui automatise les tests, intégrations et déploiements de code. Il surveille les changements dans GitHub et garantit un déploiement fiable. Il minimise les erreurs humaines grâce à ses processus automatisés.
+
+
+![image](https://github.com/user-attachments/assets/a4aacdee-01a8-421b-bbd8-a5c63835d7f5)
+
+
+
 # 1. Configuration du Git
 
 
