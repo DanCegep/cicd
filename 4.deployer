@@ -1,0 +1,10 @@
+# Déployer le projet dans le namespace dev
+<br><br><br>
+  - Déployer le fichier deployment et service qui se trouve dans le répertoire k8
+
+<br><br><br>
+
+  # 2. Verifier le déploiement
+<br><br><br>
+  - Vérifier si les pods tourne
+  
