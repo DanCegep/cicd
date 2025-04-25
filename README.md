@@ -22,7 +22,7 @@ Vous avez un cluster Kubernetes avec 4 Namespace Dev, QA, Prépod et Prod. Vous 
 GitHub : Plateforme de gestion de code collaboratif où le code est versionné et stocké. Il déclenche les pipelines CI/CD via des commits ou des pull requests. Il assure une collaboration fluide et une gestion centralisée du code.
 
 
-Docker Hub: Registre pour héberger, partager et déployer des images Débardeur. Il garantit des déploiements standardisés et rapides dans divers environnements. Les équipes peuvent stocker et accéder facilement à leurs conteneurs.
+Docker Hub: Registre pour héberger, partager et déployer des images Docker. Il garantit des déploiements standardisés et rapides dans divers environnements. Les équipes peuvent stocker et accéder facilement à leurs conteneurs.
 
 
 CircleCI : Outil CI/CD qui automatise les tests, intégrations et déploiements de code. Il surveille les changements dans GitHub et garantit un déploiement fiable. Il minimise les erreurs humaines grâce à ses processus automatisés.
@@ -35,7 +35,7 @@ CircleCI : Outil CI/CD qui automatise les tests, intégrations et déploiements 
 # 1. Configuration du Git
 
 
-GitHub est une plateforme de gestion de versions basée sur Git, largement utilisée pour le développement collaboratif de logiciels. Elle permet aux informaticiens de sauvegarder leur code source, leurs scripts, leurs manifestes et tous autres types de documentations. 
+GitHub est une plateforme de gestion de versions basée sur Git, largement utilisée pour le développement collaboratif de logiciels. Elle permet aux informaticiens de sauvegarder leur code source, leurs scripts, leurs manifestes et tous les autres types de documentations. 
 
 Permets de suivre les modifications effectuées et de travailler simultanément sur différents aspects d’un projet via des branches. 
 
@@ -44,7 +44,7 @@ Dans un pipeline CI/CD, GitHub agit comme le point central où le code est hébe
 Cette étape met en place le dépôt de donnée qui servira de stockage du code.
 
 
-[Consultez le guide sur git](1.git.md)
+[Consultez le guide sur GitHub](1.git.md)
 
 
 
@@ -58,7 +58,7 @@ Dans un processus CI/CD, Docker Hub est utilisé pour héberger les images cré�
 Cette étape met en place votre registraire d'image docker.
 
 
-[Consultez le guide sur docker hub](2.docker.md)
+[Consultez le guide sur Docker Hub](2.docker.md)
 
 
 
@@ -74,7 +74,14 @@ Sa flexibilité et sa capacité à s’intégrer facilement avec d’autres outi
 Cette étape met en place le workflow CI/CD.
 
 
-[Consultez le guide sur docker hub](3.CircleCI.md)
+[Consultez le guide sur CircleCi](3.CircleCI.md)
+
+
+# 4. Déployez et testez le pipeline
+
+Maintenant que tout est en place et que tous nos environnements sont créés, déployons notre projets node.js et testons notre pipeline.
+
+[Consultez le guide sur le déploiement et pipeline](4.deployer.md)
 
 
 
